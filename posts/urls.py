@@ -5,17 +5,18 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
+from yatube_api.settings import description_swagger
 
 from .views import CommentViewSet, PostViewSet, UserViewSet
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
+        title='Yatube API',
         default_version='v1',
-        description="Test description",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="BSD License"),
+        description=description_swagger,
+        terms_of_service='https://www.google.com/policies/terms/',
+        contact=openapi.Contact(email='kirill.shubarin@gmail.com'),
+        license=openapi.License(name='BSD License'),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),

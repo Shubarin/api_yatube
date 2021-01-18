@@ -162,4 +162,19 @@ REDOC_SETTINGS = {
 }
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+description_swagger = 'api/v1/posts/ (GET, POST): получаем список ' \
+                      'всех постов или создаём новый пост;\n' \
+                      'api/v1/posts/{post_id}/ (GET, PUT(PATCH), DELETE): ' \
+                      'получаем, редактируем или удаляем пост по id;\n' \
+                      'api/v1/api-token-auth/ (POST): передаём логин ' \
+                      'и пароль, получаем токен;\n' \
+                      'Если пользователь не авторизован, то API ' \
+                      'доступен только для чтения;\n' \
+                      'api/v1/posts/{post_id}/comments/{comment_id}/ ' \
+                      '(GET, PUT(PATCH), DELETE): получаем, редактируем или ' \
+                      'удаляем комментарий по id;\n' \
+                      'api/v1/posts/{post_id}/comments/ (GET, POST): ' \
+                      'получаем список всех комментариев или создаём новый, ' \
+                      'передав id поста, который хотим прокомментировать'
+
 django_heroku.settings(locals())
