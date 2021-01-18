@@ -9,6 +9,8 @@ django-cors-headers==3.6.0
 django-rest-swagger==2.2.0
 djangorestframework==3.12.2
 drf-yasg==1.20.0
+gunicorn
+django-heroku
 idna==2.10
 importlib-metadata==3.4.0
 inflection==0.5.1
