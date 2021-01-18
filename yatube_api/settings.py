@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
     'corsheaders',
     'posts',
 ]
@@ -136,3 +137,24 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'bearerAuth': {
+            'description': 'Получите свой токен. '
+                           'Для этого передайте в теле запроса свои '
+                           'учетные данные по адресу api/v1/api-token-auth/. '
+                           'После этого в поле value вставьте '
+                           '"Token "+"полученный токен".\n'
+                           'INPUT EXAMPLE: Token 958e8ddf33cc24e6108f996aa964dda790ba01c2',
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+        },
+    },
+    'USE_SESSION_AUTH': False,
+}
+
+REDOC_SETTINGS = {
+    'LAZY_RENDERING': False,
+}
