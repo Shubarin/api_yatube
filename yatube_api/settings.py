@@ -69,10 +69,7 @@ REST_FRAMEWORK = {
 # игнорируя политику Some Origin
 CORS_ORIGIN_ALLOW_ALL = True
 # определяет URL'ы, к которым можно обращаться с других доменов
-CORS_URLS_REGEX = [
-    r'^/api/.*$',
-    r'^/swagger/.*$'
-]
+CORS_URLS_REGEX = r'^/api/.*$', r'^/swagger/.*$'
 
 ROOT_URLCONF = 'yatube_api.urls'
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
