@@ -1,17 +1,10 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import permissions, status, viewsets
+from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 
 from .models import Comment, Post, User
+from .permissions import IsAuthorOrReadOnly
 from .serializers import CommentSerializer, PostSerializer, UserSerializer
-
-
-class IsAuthorOrReadOnly(permissions.IsAuthenticated):
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-
-        return obj.author == request.user
 
 
 class CommentViewSet(viewsets.ModelViewSet):
